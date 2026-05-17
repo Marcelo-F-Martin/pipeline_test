@@ -19,7 +19,7 @@ CREATE VIEW cobranzas_capa_dos.vista_fact_cobranzas AS
         fecha_operacion AS fecha_cobro,
         CASE WHEN forma_pago = 'efe' THEN 'efectivo'
 			 WHEN forma_pago = 'transf' THEN 'transferencia'
-             WHEN forma_pago = 'tc' THEN 'tarejeta de credito'
+             WHEN forma_pago = 'tc' THEN 'tarjeta de credito'
              ELSE 'no disponible'
 		END AS medio_de_pago,
 		CASE WHEN hoja_origen LIKE 'B%' THEN 'broker'
