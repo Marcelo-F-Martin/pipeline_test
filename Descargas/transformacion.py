@@ -1,4 +1,4 @@
-
+import unicodedata #para manejo de tildes
 
 def limpiar_tilde(texto):
     # 1. Normaliza el texto a la forma NFD (Descomposición)
