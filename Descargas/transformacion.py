@@ -19,7 +19,7 @@ def normalizar_encabezados(df):
   # 4_aplica función definida para limpiar tildes
   
   df.columns = df.columns.str.lower().str.strip().str.replace(' ','_')
-  df.columns = [transformacion.limpiar_tilde(col) for col in df.columns]
+  df.columns = [limpiar_tilde(col) for col in df.columns]
   return df
 
 def seleccionar_columnas(df):
