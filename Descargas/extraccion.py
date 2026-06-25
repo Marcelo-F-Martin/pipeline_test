@@ -6,13 +6,13 @@ import requests
 import pandas as pd
 import io
 
-def genera_unico_DF(lista_df):
+def genera_unico_DF(lista_dicc_repo):
  
  df_definitivo_por_libro = []   
  total_registros = 0
   
  #====== INICIO bucle externo: recorre archivos dentro del directorio ===============================
- for archivo in lista_df:
+ for archivo in lista_dicc_repo:
      
      # Filtrado para leer solo archivos .xls
      if archivo['name'].endswith('.xls'):
