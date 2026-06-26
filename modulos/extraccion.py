@@ -10,7 +10,7 @@ def extrae_archivos_del_repo():
  # Conexión a repo GitHub
  
  usuario = "Marcelo-F-Martin"
- repo = "PI_UA_pipeline_analisis_de_cobranza"
+ repo = "pipeline_analisis_de_cobranzas"
  
  # URL de la API para acceder al último release donde se alojan los archivos en crudo.
  api_url = f"https://api.github.com/repos/{usuario}/{repo}/releases/latest"
