@@ -1,6 +1,6 @@
 # Pipeline de ETL para Análisis y Control de Cobranzas
 
-Proyecto Integrador presentado en el marco del BootCamp de Data Analyst Full Program otorgado por Unicorn Academy [https://unicornacademy.es/](https://unicornacademy.es/)
+Proyecto Final presentado en el marco del BootCamp de Data Analyst Full Program otorgado por Unicorn Academy [https://unicornacademy.es/](https://unicornacademy.es/)
 <hr />
 
 ## 🎙️ Presentación
@@ -9,33 +9,58 @@ Este proyecto pretende exponer como una problemática real y concreta relacionad
 
 ## ❌ Problemática
 
-Una compañía percibe sus ingresos por comisiones sobre cobranzas realizadas, sin realizar controles sobre la correcta liquidación de esas comisiones. Esto se debe a que la fuente de datos consiste en varios archivos excel sin formato tabular limpio, de un tamaño que tornan difícil su manipulación manual con herramientas convencionales y que a su vez requieren tareas de limpieza complejas.
+Una compañía percibe sus ingresos por comisiones sobre cobranzas realizadas, sin realizar controles sobre la correcta liquidación de esas comisiones. Esto se debe a que la fuente de datos consiste en varios archivos excel sin formato tabular limpio, de un tamaño que tornan difícil su manipulación manual con herramientas convencionales y que a su vez requieren tareas de gestión de datos complejas.
 <hr />
 
 ## 💡 Propuesta
 
-Dar solución a la problemática planteada a partir de la orquestación de un pipeline de ETL end-to-end de datos en python que recorra un directorio específico (para este proyecto es este repositorio), lea y recupere todos los archivos dentro del mismo, los manipule para unificar todo en un solo dataframe final. Luego, ejecutar varios scripts SQL para definir la estructura de la Base de Datos en MySQL, ingestar el dataframe en una tabla utilizada como “landing”, mover los datos dentro del DWH emulando una arquitectura medallion para que finalicen en vistas accesibles. Por último conectar Power BI a la BD para consumir esos datos y visualizarlos.
+Resolver la problemática orquestando un pipeline de ETL de datos con python. El mismo recorre un directorio específico (este repositorio), recupera archivos .xls, los manipula y unifica en un solo dataframe final. Luego, ejecuta scripts SQL que definen la estructura de la BD e ingesta los datos en MySQL. Primero en una tabla utilizada como “landing”, para luego moverlos dentro del DWH emulando una arquitectura medallion, finalizando en vistas accesibles para los usuarios. Por último conecta Power BI Desktop a la BD para consumir los datos. 
+
+El archivo PBI, fue diseñado con: parámetros dinámicos de conexión a MySQL, modelo de datos estrella, diversas medidas DAX y representaciones gráficas. El archivo se dispone con formato PBI Template. Todo con la idea de brindar a esta herramienta la función analítica del proyecto.
 <hr />
 
 ## 🛠️ Stack Tecnológico - Requisitos Previos
-- [x] **Windows** (orquestación diseñada para este OS).
+- [x] **Windows** (OS).
 - [x] **Python 3.9+** (se recomienda el uso de Jupyter Notebook - Anaconda).
 - [x] **MySQL Server 8.0+** y **Connector/NET 8.0.33** (funcionando localmente) .
-- [x] **Power BI Desktop** (visualización final).
+- [x] **Power BI Desktop** (visualización).
 <hr />
 
-## ⚠️ Ejecución: 
+## ⚠️ Ejecución
 > [!IMPORTANT]  
 > Siga estos pasos para reproducir el pipeline en su entorno local:
 
-1. Descargue todos los archivos dentro de ‘**Descargas**’ en el mismo directorio local
-2. Modifique el archivo ‘.env.example’con sus credenciales de acceso a MySQL, y luego renombre el archivo a ‘**.env**’
-3. Abra Jupyter Notebook.
-4. Ejecute el archivo ‘**PI_UA_orquestador.ipynb**’.
+1. Descargue todos los archivos de la carpeta ‘**descargas**’ en el mismo directorio local.
+2. Modifique el archivo ‘.env.example’ con sus credenciales de acceso a MySQL, y luego renombre el archivo a ‘**.env**’
+3. Ejecute el archivo de Jupyter Notebook ‘**PI_UA_orquestador.ipynb**’.
    * Importante: Ejecutar este archivo dentro del mismo directorio (carpeta) donde se descargaron los archivos del punto 1.
-     
-5. El script validará la conexión, procesará los datos e informará el avance de ejecución. 
-6. Al terminar el proceso, se da inicio a la plantilla de Power BI para visualizar los resultados.
+4. El flujo finaliza inicializando la plantilla de Power BI para visualizar los resultados.
+<hr />
+
+## 🗂️ Estructura del Proyecto
+
+```text
+mi-portfolio/
+│
+├──  data/                     # Repositorio de datos del proyecto
+│   ├── raw_data.csv           # Archivos de datos en crudo (sin procesar)
+│   └── clean_data.csv         # Archivos de datos limpios y transformados
+│
+├──  descargas/                # Archivos principales para el usuario final
+│   ├── orquestador.ipynb      # Script principal (Notebook para descargar y ejecutar)
+|   └──
+|   └──
+│
+├──  modulos/                  # Código auxiliar estructurado
+│   ├── funciones_etl.py       # Módulos .py invocados por el orquestador
+│   └── funciones_etl.py       # Módulos .py invocados por el orquestador
+│
+└──  SQL/                      # Consultas y scripts de bases de datos
+    ├── creacion_tablas.sql    # Scripts para definir la estructura de datos
+    └── transformaciones.sql   # Consultas SQL utilizadas en el proceso
+```
+
+
 <hr />
 
 ## 🖊️ Autor
