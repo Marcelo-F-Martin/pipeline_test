@@ -23,7 +23,7 @@ def guardar_archivo(df):
     return mensaje
 
 def recuperar_script_sql():
-    ruta_repo_scriptSQL = 'https://raw.githubusercontent.com/Marcelo-F-Martin/pipeline_analisis_de_cobranzas/refs/heads/main/SQL'
+    ruta_repo_scriptSQL = 'https://raw.githubusercontent.com/Marcelo-F-Martin/pipeline_analisis_de_cobranzas/refs/heads/main/sql'
 
     url_sql_ddl = f"{ruta_repo_scriptSQL}/1_PI_UA_DDL.sql"
     url_sql_inserts = f"{ruta_repo_scriptSQL}/2_PI_UA_inserts.sql"
