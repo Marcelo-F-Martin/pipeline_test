@@ -34,7 +34,7 @@ El archivo PBI, fue diseñado con: parámetros dinámicos de conexión a MySQL, 
 2. Modifique el archivo ‘**.env.ejemplo**’ con sus credenciales de acceso a MySQL, y luego renombre el archivo a ‘**.env**’
 3. Ejecute el archivo de Jupyter Notebook ‘**PI_UA_orquestador.ipynb**’.
    * Importante: Ejecutar este archivo dentro del mismo directorio (carpeta) donde se descargaron los archivos del punto 1.
-4. El flujo finaliza inicializando el template de Power BI para visualizar los resultados.
+4. El flujo finaliza inicializando automaticamente el template de Power BI para visualizar los resultados.
 <hr />
 
 ## 🗂️ Estructura del Proyecto
